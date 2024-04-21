@@ -1,6 +1,6 @@
 # PonsUI
 
-This template should help get you started developing with Vue 3 in Vite.
+The UI portion of Pons, a simple to use couponing application for managing coupons for your markets!
 
 ## Recommended IDE Setup
 
