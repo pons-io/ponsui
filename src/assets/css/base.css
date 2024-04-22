@@ -1,0 +1,101 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --floral-white: hsl(41, 100%, 96%);
+  --soft-white: hsl(0, 0%, 97%);
+  --white-mute: hsl(0, 0%, 95%);
+
+  --lightgrey: hsl(60, 3%, 93%);
+
+  --jet: hsl(0, 0%, 18%);
+  --black-soft: hsl(0, 0%, 13%);
+  --black-mute: hsl(0, 0%, 16%);
+
+  --pale: hsl(19, 100%, 90%);
+  --accent: hsl(352, 48%, 46%);
+  --secondary: hsl(207, 29%, 58%);
+
+  --divider-light-1: rgba(60, 60, 60, 0.29);
+  --divider-light-2: rgba(60, 60, 60, 0.12);
+  --divider-dark-1: rgba(84, 84, 84, 0.65);
+  --divider-dark-2: rgba(84, 84, 84, 0.48);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--lightgrey);
+  --color-background-floral: var(--floral-white);
+  --color-background-soft: var(--soft-white);
+  --color-background-mute: var(--white-mute);
+
+  --color-border: var(--divider-light-2);
+  --color-border-hover: var(--divider-light-1);
+
+  --color-heading: var(--jet);
+  --color-text: var(--jet);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--jet);
+    --color-background-soft: var(--black-soft);
+    --color-background-mute: var(--black-mute);
+
+    --color-border: var(--divider-dark-2);
+    --color-border-hover: var(--divider-dark-1);
+
+    --color-heading: var(--soft-white);
+    --color-text: var(--soft-white);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
