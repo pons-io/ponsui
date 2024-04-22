@@ -1,83 +1,32 @@
+<script setup>
+defineProps({
+  pricing: {
+    type: Object,
+    default: () => ({})
+  }
+})
+</script>
+
 <template>
-  <div class="w-table">
-    <div class="w-table-cell">
-      <div class="w-container">
-        <div class="w-card color-violet">
-          <div class="card-header">
-            <div class="w-title">
-              Basic
-            </div>
-            <div class="w-price">
-              $9.99
-            </div>
-            <div class="container-button">
-              <a class="w-button" href="https://codepen.io/Anna_Batura/" target="_blank">Sign up </a>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="w-item">
-              <span>1GB </span>Disk Space
-            </div>
-            <div class="w-item">
-              <span>10GB </span>Monthly Bandwidth
-            </div>
-            <div class="w-item">
-              <span>1 </span>Email Accounts
-            </div>
-          </div>
-        </div>
-        <div class="w-card color-green">
-          <div class="card-header">
-            <div class="w-title">
-              Standard
-            </div>
-            <div class="w-price">
-              $19.99
-            </div>
-            <div class="container-button">
-              <div class="w-button">
-                Sign up
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="w-item">
-              <span>2GB </span>Disk Space
-            </div>
-            <div class="w-item">
-              <span>25GB </span>Monthly Bandwidth
-            </div>
-            <div class="w-item">
-              <span>2 </span>Email Accounts
-            </div>
-          </div>
-        </div>
-        <div class="w-card color-blue">
-          <div class="card-header">
-            <div class="w-title">
-              Professional
-            </div>
-            <div class="w-price">
-              $29.99
-            </div>
-            <div class="container-button">
-              <div class="w-button">
-                Sign up
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="w-item">
-              <span>5GB </span>Disk Space
-            </div>
-            <div class="w-item">
-              <span>50GB </span>Monthly Bandwidth
-            </div>
-            <div class="w-item">
-              <span>10 </span>Email Accounts
-            </div>
-          </div>
-        </div>
+  <div :class="['w-card', `color-${pricing.color}`]">
+    <div class="card-header">
+      <div class="w-title">
+        {{ pricing.title }}
+      </div>
+      <div class="w-price">
+        {{ pricing.price }}
+      </div>
+      <div class="container-button">
+        <a class="w-button" :href="pricing.href" target="_blank">Sign up </a>
+      </div>
+    </div>
+    <div class="card-content">
+      <div
+        class="w-item"
+        v-for="(f, i) in pricing.features"
+        :key="`${i}-${pricing.id}`"
+      >
+        <span>{{ f.span }} </span> {{ f.text }}
       </div>
     </div>
   </div>

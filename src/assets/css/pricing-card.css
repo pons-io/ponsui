@@ -1,25 +1,25 @@
-.color-violet .container-button {
-  background-color: #98f;
+.color-accent .container-button {
+  background-color: var(--accent);
 }
 
-.color-violet .container-button:before {
-  background-color: #98f;
+.color-accent .container-button:before {
+  background-color: var(--accent);
 }
 
-.color-violet .w-item span {
-  color: #98f;
+.color-accent .w-item span {
+  color: var(--accent);
 }
 
-.color-green .container-button {
-  background-color: #1bbc9d;
+.color-secondary .container-button {
+  background-color: var(--secondary);
 }
 
-.color-green .container-button:before {
-  background-color: #1bbc9d;
+.color-secondary .container-button:before {
+  background-color: var(--secondary);
 }
 
-.color-green .w-item span {
-  color: #1bbc9d;
+.color-secondary .w-item span {
+  color: var(--secondary);
 }
 
 .color-red .container-button {
@@ -46,16 +46,16 @@
   color: #E91E63;
 }
 
-.color-blue .container-button {
-  background-color: #3498db;
+.color-violet .container-button {
+  background-color: var(--violet);
 }
 
-.color-blue .container-button:before {
-  background-color: #3498db;
+.color-violet .container-button:before {
+  background-color: var(--violet);
 }
 
-.color-blue .w-item span {
-  color: #3498db;
+.color-violet .w-item span {
+  color: var(--violet);
 }
 
 .w-table {
@@ -175,17 +175,17 @@
 }
 
 .w-container .w-card .container-button:hover:before {
-  top: -200px;
-  left: -50px;
-  width: 400px;
-  height: 400px;
+  top: -210px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
 }
 
 .w-container .w-card .container-button:hover:after {
-  top: -200px;
-  left: -50px;
-  width: 400px;
-  height: 400px;
+  top: -210px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
 }
 
 .w-container .w-card:hover {
