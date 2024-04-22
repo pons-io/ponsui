@@ -17,7 +17,7 @@ defineProps({
         {{ pricing.price }}
       </div>
       <div class="container-button">
-        <a class="w-button" :href="pricing.href" target="_blank">Sign up </a>
+        <a class="w-button" :href="pricing.href" target="_blank">Sign up</a>
       </div>
     </div>
     <div class="card-content">
