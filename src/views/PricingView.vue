@@ -37,7 +37,7 @@ const pricing = computed(() => {
           text: 'API Calls'
         }
       ],
-      price: '$250',
+      price: '$250/Month',
       color: 'secondary',
       href: '#'
     }, {
@@ -55,8 +55,26 @@ const pricing = computed(() => {
           text: 'API Calls'
         }
       ],
-      price: '$500',
+      price: '$500/Month',
       color: 'violet',
+      href: '#'
+    }, {
+      id: 4,
+      title: 'Customized',
+      features: [
+        {
+          span: 'Custom',
+          text: 'Coupons'
+        }, {
+          span: 'Custom',
+          text: 'Organizations'
+        }, {
+          span: 'Custom',
+          text: 'API Calls'
+        }
+      ],
+      price: 'Custom',
+      color: 'red',
       href: '#'
     }
   ]

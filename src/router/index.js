@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PricingView from '@/views/PricingView.vue'
+import ApiView from '@/views/APIView.vue'
+import FormView from '@/views/FormView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +16,16 @@ const router = createRouter({
       path: '/pricing',
       name: 'pricing',
       component: PricingView
+    },
+    {
+      path: '/api',
+      name: 'API',
+      component: ApiView
+    },
+    {
+      path: '/form',
+      name: 'form',
+      component: FormView
     },
     {
       path: '/about',

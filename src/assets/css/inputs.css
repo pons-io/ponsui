@@ -1,0 +1,83 @@
+.control {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 0;
+}
+
+/* Labels */
+.control__label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  height: 2rem;
+  font-size: 14px;
+}
+
+.control__label--required::before {
+  display: inline-block;
+  margin-inline-end: 4px;
+  color: var(--error);
+  font-size: 14px;
+  content: "*"
+}
+
+.control__label--marked::after {
+  content: ":";
+  position: relative;
+  margin-block: 0;
+  margin-inline-start: 2px;
+  margin-inline-end: 8px;
+}
+
+/* Basic Text Input */
+.control__item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.control__input__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+}
+
+.control__input__content {
+  flex: auto;
+  max-width: 100%;
+}
+
+.control__input {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.3rem 0.6rem;
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--lightgrey);
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.control__input:hover {
+  border-color: var(--secondary);
+  border-inline-end-width: 1px;
+}
+
+.control__input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+  border-inline-end-width: 1px;
+  outline: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .control__input:focus {
+    box-shadow: 0 0 0 2px rgba(113, 193, 255, 0.329)
+  }
+}
