@@ -25,20 +25,34 @@ function onSwitch (val) {
   <section class="login-form">
     <form class="form">
       <section class="control__flex">
-        <text-input v-model="test" :label="'Email'" is-required />
+        <text-input
+          v-model="test"
+          :label="'Email'"
+          is-required
+        />
         <fieldset class="control">
           <label class="control__label--required">Password</label>
-          <input class="control__input" type="password" />
+          <input
+            class="control__input"
+            type="password"
+          >
         </fieldset>
       </section>
       <section class="control__flex">
-        <checkbox-input @checked="onChecked" :label="'Hello There'" />
+        <checkbox-input
+          :label="'Hello There'"
+          @checked="onChecked"
+        />
       </section>
       <section class="control__flex">
         <label class="checkbox__wrapper">
           <span :class="['checkbox', { 'checkbox--checked': tmp }]">
-            <input v-model="tmp" type="checkbox" class="checkbox__input">
-            <span class="checkbox__inner"></span>
+            <input
+              v-model="tmp"
+              type="checkbox"
+              class="checkbox__input"
+            >
+            <span class="checkbox__inner" />
           </span>
           <span>Remember Me</span>
         </label>

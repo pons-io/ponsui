@@ -6,23 +6,38 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <nav>
       <div class="logo">
-        <router-link to="/">Pons</router-link>
+        <router-link to="/">
+          Pons
+        </router-link>
       </div>
       <ul class="links">
         <li>
-          <router-link to="/api">API</router-link>
+          <router-link to="/api">
+            API
+          </router-link>
         </li>
         <li>
-          <router-link to="/pricing">Pricing</router-link>
+          <router-link to="/pricing">
+            Pricing
+          </router-link>
         </li>
         <li>
-          <router-link to="/about">About</router-link>
+          <router-link to="/about">
+            About
+          </router-link>
         </li>
         <li>
-          <router-link to="/login">Log In</router-link>
+          <router-link to="/login">
+            Log In
+          </router-link>
         </li>
         <li>
-          <router-link class="get-started" to="/getting-started">Get Started</router-link>
+          <router-link
+            class="get-started"
+            to="/getting-started"
+          >
+            Get Started
+          </router-link>
         </li>
       </ul>
     </nav>
