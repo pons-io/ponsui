@@ -1,7 +1,23 @@
 <script setup>
 import { ref } from 'vue'
+import TextInput from '@/components/TextInput.vue'
+import CheckboxInput from '@/components/CheckboxInput.vue'
+import SwitchInput from '@/components/SwitchInput.vue'
 
 const tmp = ref(false)
+const checked = ref(false)
+const switchChecked = ref(false)
+const test = ref('')
+
+function onChecked (val) {
+  console.log(val)
+  checked.value = val
+}
+
+function onSwitch (val) {
+  console.log(val)
+  switchChecked.value = val
+}
 </script>
 
 <template>
@@ -9,14 +25,14 @@ const tmp = ref(false)
   <section class="login-form">
     <form class="form">
       <section class="control__flex">
-        <fieldset class="control">
-          <label class="control__label--required">Email</label>
-          <input class="control__input" />
-        </fieldset>
+        <text-input v-model="test" :label="'Email'" is-required />
         <fieldset class="control">
           <label class="control__label--required">Password</label>
           <input class="control__input" type="password" />
         </fieldset>
+      </section>
+      <section class="control__flex">
+        <checkbox-input @checked="onChecked" :label="'Hello There'" />
       </section>
       <section class="control__flex">
         <label class="checkbox__wrapper">
@@ -26,6 +42,9 @@ const tmp = ref(false)
           </span>
           <span>Remember Me</span>
         </label>
+      </section>
+      <section class="control__flex">
+        <switch-input @checked="onSwitch" />
       </section>
     </form>
   </section>
