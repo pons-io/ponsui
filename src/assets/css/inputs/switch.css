@@ -47,7 +47,7 @@
   content: "";
 }
 
-.switch--checked {
+.switch.switch--checked {
   background: var(--accent);
 }
 
@@ -83,4 +83,14 @@
   margin-top: -22px;
   margin-inline-start: 0;
   margin-inline-end: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .switch {
+    background: var(--border-color);
+  }
+
+  .switch:hover {
+    background: var(--lightgrey);
+  }
 }
