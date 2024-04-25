@@ -1,9 +1,5 @@
 <script setup>
 defineProps({
-  modelValue: {
-    type: String,
-    required: true
-  },
   isRequired: {
     type: Boolean,
     default: false
@@ -13,16 +9,17 @@ defineProps({
     required: true
   }
 })
-defineEmits(['update:modelValue'])
+const model = defineModel({
+  type: String
+})
 </script>
 
 <template>
   <fieldset class="control">
     <label :class="{ 'control__label--required': isRequired }">{{ label }}</label>
     <input
-      :value="modelValue"
+      v-model="model"
       class="control__input"
-      @input="$emit('update:modelValue', $event.target.value)"
     >
   </fieldset>
 </template>
