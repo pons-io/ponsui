@@ -1,12 +1,19 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 
-const emit = defineEmits(['checked'])
+defineProps({
+  modelValue: {
+    type: Boolean
+  }
+})
+
+const emit = defineEmits(['update:modelValue'])
 const checked = ref(false)
 
-watch(checked, newVal => {
-  emit('checked', newVal)
-})
+function onClick () {
+  checked.value = !checked.value
+  emit('update:modelValue', checked.value)
+}
 </script>
 
 <template>
@@ -14,12 +21,12 @@ watch(checked, newVal => {
     role="switch"
     :class="['switch', { 'switch--checked': checked }]"
     type="button"
-    @click="checked = !checked"
+    @click="onClick"
   >
-    <div class="switch__handle"></div>
+    <div class="switch__handle" />
     <span class="switch__inner">
-      <span class="switch__inner--checked"></span>
-      <span class="switch__inner--unchecked"></span>
+      <span class="switch__inner--checked" />
+      <span class="switch__inner--unchecked" />
     </span>
   </button>
 </template>

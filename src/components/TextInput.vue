@@ -21,8 +21,8 @@ defineEmits(['update:modelValue'])
     <label :class="{ 'control__label--required': isRequired }">{{ label }}</label>
     <input
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
       class="control__input"
-    />
+      @input="$emit('update:modelValue', $event.target.value)"
+    >
   </fieldset>
 </template>

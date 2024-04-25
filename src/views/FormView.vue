@@ -3,21 +3,15 @@ import { ref } from 'vue'
 import TextInput from '@/components/TextInput.vue'
 import CheckboxInput from '@/components/CheckboxInput.vue'
 import SwitchInput from '@/components/SwitchInput.vue'
+import RadioInput from '@/components/RadioInput.vue'
 
 const tmp = ref(false)
 const checked = ref(false)
 const switchChecked = ref(false)
 const test = ref('')
+const radioTest = ref('')
+const radioCompTest = ref('')
 
-function onChecked (val) {
-  console.log(val)
-  checked.value = val
-}
-
-function onSwitch (val) {
-  console.log(val)
-  switchChecked.value = val
-}
 </script>
 
 <template>
@@ -40,8 +34,8 @@ function onSwitch (val) {
       </section>
       <section class="control__flex">
         <checkbox-input
+          v-model="checked"
           :label="'Hello There'"
-          @checked="onChecked"
         />
       </section>
       <section class="control__flex">
@@ -58,7 +52,52 @@ function onSwitch (val) {
         </label>
       </section>
       <section class="control__flex">
-        <switch-input @checked="onSwitch" />
+        <switch-input v-model="switchChecked" />
+      </section>
+      <hr>
+      <section class="control__flex">
+        <div class="radio__group">
+          <label class="radio__wrapper">
+            <span :class="['radio', { 'radio--checked': radioTest === 'apple' }]">
+              <input
+                v-model="radioTest"
+                class="radio__input"
+                type="radio"
+                value="apple"
+              >
+              <span class="radio__inner" />
+            </span>
+            <span>Apple</span>
+          </label>
+          <label class="radio__wrapper">
+            <span :class="['radio', { 'radio--checked': radioTest === 'pear' }]">
+              <input
+                v-model="radioTest"
+                class="radio__input"
+                type="radio"
+                value="pear"
+              >
+              <span class="radio__inner" />
+            </span>
+            <span>Pear</span>
+          </label>
+        </div>
+      </section>
+      <hr>
+      <radio-input
+        v-model="radioCompTest"
+        value="pineapple"
+      />
+      <radio-input
+        v-model="radioCompTest"
+        value="coconut"
+      />
+      <hr>
+      <section class="control__flex">
+        <select class="control__select">
+          <option>Demo</option>
+          <option>World</option>
+        </select>
       </section>
     </form>
   </section>
