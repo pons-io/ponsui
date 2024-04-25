@@ -1,7 +1,7 @@
 import { describe, test, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 
-import TextInput from '../TextInput.vue'
+import TextInput from '../inputs/TextInput.vue'
 
 describe('TextInput', () => {
   describe('Label Renders Correctly', () => {

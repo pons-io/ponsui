@@ -20,6 +20,7 @@ const model = defineModel({
     <input
       v-model="model"
       class="control__input"
+      :required="isRequired"
     >
   </fieldset>
 </template>

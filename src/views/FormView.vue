@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-import TextInput from '@/components/TextInput.vue'
-import CheckboxInput from '@/components/CheckboxInput.vue'
-import SwitchInput from '@/components/SwitchInput.vue'
-import RadioInput from '@/components/RadioInput.vue'
+import TextInput from '@/components/inputs/TextInput.vue'
+import CheckboxInput from '@/components/inputs/CheckboxInput.vue'
+import SwitchInput from '@/components/inputs/SwitchInput.vue'
+import RadioInput from '@/components/inputs/RadioInput.vue'
 
 const tmp = ref(false)
 const checked = ref(false)
