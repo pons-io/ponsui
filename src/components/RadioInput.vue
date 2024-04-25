@@ -1,25 +1,23 @@
 <script setup>
 defineProps({
-  modelValue: {
-    type: String,
-    default: ''
-  },
   value: {
     type: String,
     default: ''
   }
 })
-defineEmits(['update:modelValue'])
+const model = defineModel({
+  type: String
+})
 </script>
 
 <template>
   <label class="radio__wrapper">
-    <span :class="['radio', { 'radio--checked': modelValue === value }]">
+    <span :class="['radio', { 'radio--checked': model === value }]">
       <input
+        v-model="model"
         class="radio__input"
         type="radio"
         :value="value"
-        @click="$emit('update:modelValue', $event.target.value)"
       >
       <span class="radio__inner" />
     </span>
