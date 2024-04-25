@@ -8,10 +8,30 @@
   flex-flow: row wrap;
   min-width: 0;
   border: none;
+  width: 100%;
 }
 
 .control__flex {
   display: flex;
+  flex-wrap: nowrap;
+}
+
+input.status--error {
+  border-color: var(--error);
+}
+
+.error__msg {
+  z-index: -1;
+  transition: all 0.2s ease-in;
+  color: var(--error);
+  display: flex;
+  flex-wrap: nowrap;
+  opacity: 1;
+}
+
+.err--hidden {
+  transform: translateY(-20px);
+  opacity: 0;
 }
 
 /* Labels */

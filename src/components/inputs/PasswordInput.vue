@@ -3,10 +3,6 @@ defineProps({
   isRequired: {
     type: Boolean,
     default: false
-  },
-  label: {
-    type: String,
-    required: true
   }
 })
 const model = defineModel({
@@ -16,11 +12,12 @@ const model = defineModel({
 
 <template>
   <fieldset class="control">
-    <label :class="{ 'control__label--required': isRequired }">{{ label }}</label>
+    <label class="control__label--required">Password</label>
     <input
       v-model="model"
       class="control__input"
-      :required="isRequired"
+      type="password"
+      required
     >
   </fieldset>
 </template>

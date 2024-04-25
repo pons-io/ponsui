@@ -4,6 +4,8 @@ import TextInput from '@/components/inputs/TextInput.vue'
 import CheckboxInput from '@/components/inputs/CheckboxInput.vue'
 import SwitchInput from '@/components/inputs/SwitchInput.vue'
 import RadioInput from '@/components/inputs/RadioInput.vue'
+import EmailInput from '@/components/inputs/EmailInput.vue'
+import PasswordInput from '@/components/inputs/PasswordInput.vue'
 
 const tmp = ref(false)
 const checked = ref(false)
@@ -11,26 +13,45 @@ const switchChecked = ref(false)
 const test = ref('')
 const radioTest = ref('')
 const radioCompTest = ref('')
+const email = ref('')
+const password = ref('')
+const errHandlers = {
+  email: val => {
+    if (val && val.match(/[^\s@]+@[^\s@]+\.[^\s@]+/)) {
+      return { isValid: true }
+    }
 
+    return { isValid: false, msg: 'Please enter a valid email' }
+  }
+}
 </script>
 
 <template>
   <h1>Example of a form view</h1>
   <section class="login-form">
-    <form class="form">
+    <form
+      class="form"
+      @submit.prevent="validate"
+    >
+      <section class="control__flex">
+        <email-input
+          v-model="email"
+          is-required
+        />
+      </section>
       <section class="control__flex">
         <text-input
           v-model="test"
           :label="'Email'"
           is-required
+          :validation="errHandlers.email"
         />
-        <fieldset class="control">
-          <label class="control__label--required">Password</label>
-          <input
-            class="control__input"
-            type="password"
-          >
-        </fieldset>
+        <text-input
+          v-model="password"
+          :label="'Live'"
+          is-required
+          :validation="errHandlers.email"
+        />
       </section>
       <section class="control__flex">
         <checkbox-input
@@ -99,6 +120,7 @@ const radioCompTest = ref('')
           <option>World</option>
         </select>
       </section>
+      <button>Submit</button>
     </form>
   </section>
 </template>
@@ -110,6 +132,6 @@ const radioCompTest = ref('')
   align-items: center;
 }
 .form {
-  width: 25%;
+  width: 50%;
 }
 </style>
