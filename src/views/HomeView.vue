@@ -5,7 +5,9 @@
         <section class="info">
           <h1>Coupons Made Easy</h1>
           <p>Signup for Pons today! Make coupon management a breeze for your product and market</p>
-          <button>Get Started</button>
+          <button class="btn btn--primary">
+            Get Started
+          </button>
         </section>
         <figure class="image">
           <img src="/svgs/shopping.svg">
@@ -21,6 +23,7 @@
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  width: 1170px;
 }
 
 .content .container {
@@ -43,16 +46,6 @@
   color: var(--jet);
 }
 
-.content .info button {
-  border: 0;
-  border-radius: 20px;
-  padding: 0.6rem 1.3rem;
-  margin-top: 1.3rem;
-  cursor: pointer;
-  color: var(--white);
-  background-color: var(--accent);
-}
-
 .content .image img {
   height: auto;
   max-width: 100%;
@@ -64,11 +57,25 @@
     min-height: calc(100vh - 101px);
     justify-content: center;
     flex-direction: column-reverse;
+    width: auto;
   }
 
   .content .info {
     text-align: center;
     margin-bottom: 1rem;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
 }
 
