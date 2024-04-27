@@ -1,16 +1,27 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+import { Vue3Snackbar } from 'vue3-snackbar'
+import { Menu } from 'lucide-vue-next'
+
+const showMobile = ref(false)
 </script>
 
 <template>
   <header>
-    <nav>
+    <i>
+      <Menu
+        size="32"
+        @click="showMobile = !showMobile"
+      />
+    </i>
+    <nav :class="['nav-content', showMobile ? 'open-menu' : 'closed-menu']">
       <div class="logo">
         <router-link to="/">
           Pons
         </router-link>
       </div>
-      <ul class="links">
+      <ul class="nav-items">
         <li>
           <router-link to="/api">
             API
@@ -43,58 +54,29 @@ import { RouterLink, RouterView } from 'vue-router'
     </nav>
   </header>
 
-  <router-view />
+  <main>
+    <router-view />
+  </main>
+  <vue3-snackbar
+    top
+    right
+    dense
+    shadow
+    border="left"
+    :duration="4000"
+  />
 </template>
 
 <style scoped>
-header {
-  padding: 1rem;
-  background-color: var(--color-background-soft);
-}
-nav {
-  display: flex;
-  align-items: center;
+i {
+  display: none;
 }
 
-nav .logo {
-  font-style: italic;
-  text-transform: uppercase;
-  font-size: 20px;
-}
-
-nav .links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-left: auto;
-}
-
-nav .links li a {
-  margin-left: 1.6rem;
-  transition: .3s;
-}
-
-nav .links li a:hover {
-  color: var(--accent);
-}
-
-nav .links li a.get-started {
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-  background-color: var(--accent);
-  color: var(--white);
-}
-
-nav .links li a.get-started:hover {
-  background-color: var(--pale);
-  color: var(--jet);
-}
-
-@media (max-width: 767px) {
-  nav .links li {
-    margin-left: auto;
+@media screen and (max-width: 768px) {
+  i {
+    display: flex;
+    padding: 1rem;
+    justify-content: end;
   }
 }
 </style>

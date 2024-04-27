@@ -7,9 +7,9 @@
           <p>Signup for Pons today! Make coupon management a breeze for your product and market</p>
           <button>Get Started</button>
         </section>
-        <section class="image">
+        <figure class="image">
           <img src="/svgs/shopping.svg">
-        </section>
+        </figure>
       </div>
     </div>
   </main>
@@ -54,14 +54,11 @@
 }
 
 .content .image img {
+  height: auto;
   max-width: 100%;
 }
 
 @media (max-width: 767px) {
-  .container {
-    width: 750px;
-  }
-
   .content .container {
     gap: 0;
     min-height: calc(100vh - 101px);
@@ -72,19 +69,6 @@
   .content .info {
     text-align: center;
     margin-bottom: 1rem;
-  }
-}
-
-/* Medium */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-/* Large */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
   }
 }
 

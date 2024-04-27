@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import { useSnackbar } from 'vue3-snackbar'
+
 import TextInput from '@/components/inputs/TextInput.vue'
 import CheckboxInput from '@/components/inputs/CheckboxInput.vue'
 import SwitchInput from '@/components/inputs/SwitchInput.vue'
@@ -8,6 +10,7 @@ import EmailInput from '@/components/inputs/EmailInput.vue'
 import PasswordInput from '@/components/inputs/PasswordInput.vue'
 
 const tmp = ref(false)
+const snackbar = useSnackbar()
 const checked = ref(false)
 const switchChecked = ref(false)
 const test = ref('')
@@ -24,6 +27,14 @@ const errHandlers = {
     return { isValid: false, msg: 'Please enter a valid email' }
   }
 }
+
+function onSubmit () {
+  snackbar.add({
+    type: 'success',
+    text: 'Form Submitted!',
+    title: 'Snackbar'
+  })
+}
 </script>
 
 <template>
@@ -31,9 +42,9 @@ const errHandlers = {
   <section class="login-form">
     <form
       class="form"
-      @submit.prevent="validate"
+      @submit.prevent="onSubmit"
     >
-      <section class="control__flex">
+      <!-- <section class="control__flex">
         <email-input
           v-model="email"
           is-required
@@ -52,7 +63,7 @@ const errHandlers = {
           is-required
           :validation="errHandlers.email"
         />
-      </section>
+      </section> -->
       <section class="control__flex">
         <checkbox-input
           v-model="checked"
@@ -120,7 +131,14 @@ const errHandlers = {
           <option>World</option>
         </select>
       </section>
-      <button>Submit</button>
+      <div class="btn__group">
+        <button class="btn btn--primary">
+          Submit
+        </button>
+        <button class="btn btn--default">
+          Hello
+        </button>
+      </div>
     </form>
   </section>
 </template>
