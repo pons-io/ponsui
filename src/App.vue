@@ -3,7 +3,9 @@ import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { Vue3Snackbar } from 'vue3-snackbar'
 import { Menu } from 'lucide-vue-next'
+import { useAuthStore } from './stores/auth'
 
+const auth = useAuthStore()
 const showMobile = ref(false)
 </script>
 
@@ -35,6 +37,11 @@ const showMobile = ref(false)
         <li>
           <router-link to="/about">
             About
+          </router-link>
+        </li>
+        <li v-if="auth.isAuthed">
+          <router-link to="/dashboard">
+            Dashboard
           </router-link>
         </li>
         <li>
